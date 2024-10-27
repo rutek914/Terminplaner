@@ -3,10 +3,77 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Terminplaner"
+        xmlns:local="clr-namespace:Terminplaner" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Terminplaner" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <!-- Add Appointment Form -->
+        <GroupBox Header="Add New Appointment" Margin="0,0,0,10">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Content="Title:" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding NewTitle, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Content="Description:" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding NewDescription, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Content="Start Time:" VerticalAlignment="Center"/>
+                <DatePicker Grid.Row="2" Grid.Column="1" SelectedDate="{Binding NewStartTime, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+                <xctk:TimePicker Grid.Row="2" Grid.Column="2" Value="{Binding NewStartTime, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Content="End Time:" VerticalAlignment="Center"/>
+                <DatePicker Grid.Row="3" Grid.Column="1" SelectedDate="{Binding NewEndTime, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+                <xctk:TimePicker Grid.Row="3" Grid.Column="2" Value="{Binding NewEndTime, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Content="User:" VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding Users}" 
+                          SelectedItem="{Binding SelectedUser}" 
+                          DisplayMemberPath="Username" 
+                          Margin="5"/>
+
+                <Button Grid.Row="4" Grid.Column="3" Content="Add" 
+                        Command="{Binding AddAppointmentCommand}" 
+                        Margin="5" Width="100" />
+            </Grid>
+        </GroupBox>
+
+        <!-- Appointment List -->
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Appointments}" 
+                  SelectedItem="{Binding SelectedAppointment}" 
+                  AutoGenerateColumns="False" 
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="*"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="2*"/>
+                <DataGridTextColumn Header="Start" Binding="{Binding StartTime}" Width="150"/>
+                <DataGridTextColumn Header="End" Binding="{Binding EndTime}" Width="150"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="100"/>
+                <DataGridTextColumn Header="User" Binding="{Binding User.Username}" Width="150"/>
+            </DataGrid.Columns>
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Delete" Command="{Binding DataContext.DeleteAppointmentCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+        </DataGrid>
     </Grid>
 </Window>

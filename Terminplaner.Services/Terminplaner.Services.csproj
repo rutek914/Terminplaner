@@ -7,9 +7,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Terminplaner.Model\Terminplaner.Model.csproj" />
-    <ProjectReference Include="..\Terminplaner.Service\Terminplaner.Service.csproj" />
-  </ItemGroup>
-
 </Project>

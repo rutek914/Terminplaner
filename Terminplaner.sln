@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminplaner", "Terminplaner\Terminplaner.csproj", "{47876DF4-1D11-49BB-9BD8-1B64ACE4EFAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminplaner.View", "Terminplaner\Terminplaner.View.csproj", "{47876DF4-1D11-49BB-9BD8-1B64ACE4EFAC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminplaner.Model", "Terminplaner.Model\Terminplaner.Model.csproj", "{BB2D8A73-E156-4E58-A8BF-ADD379AF10B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminplaner.ViewModel", "Terminplaner.ViewModel\Terminplaner.ViewModel.csproj", "{675CEDC8-C55D-4A9D-AE17-9E6E67337684}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminplaner.Service", "Terminplaner.Service\Terminplaner.Service.csproj", "{ABB4C03E-6FA4-4978-B261-441FD6C132F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{47876DF4-1D11-49BB-9BD8-1B64ACE4EFAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47876DF4-1D11-49BB-9BD8-1B64ACE4EFAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47876DF4-1D11-49BB-9BD8-1B64ACE4EFAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB2D8A73-E156-4E58-A8BF-ADD379AF10B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB2D8A73-E156-4E58-A8BF-ADD379AF10B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB2D8A73-E156-4E58-A8BF-ADD379AF10B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB2D8A73-E156-4E58-A8BF-ADD379AF10B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675CEDC8-C55D-4A9D-AE17-9E6E67337684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675CEDC8-C55D-4A9D-AE17-9E6E67337684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675CEDC8-C55D-4A9D-AE17-9E6E67337684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675CEDC8-C55D-4A9D-AE17-9E6E67337684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB4C03E-6FA4-4978-B261-441FD6C132F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB4C03E-6FA4-4978-B261-441FD6C132F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB4C03E-6FA4-4978-B261-441FD6C132F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB4C03E-6FA4-4978-B261-441FD6C132F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

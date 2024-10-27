@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Terminplaner.ViewModel;
 
 namespace Terminplaner
 {
@@ -16,9 +17,10 @@ namespace Terminplaner
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(TerminplanerVM viewModel)
         {
             InitializeComponent();
+            DataContext = viewModel;
         }
     }
 }
