@@ -12,7 +12,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Add Appointment Form -->
         <GroupBox Header="Add New Appointment" Margin="0,0,0,10">
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>
@@ -49,16 +48,22 @@
                           DisplayMemberPath="Username" 
                           Margin="5"/>
 
-                <Button Grid.Row="4" Grid.Column="3" Content="Add" 
+                <Button Grid.Row="4" Grid.Column="3" Content="Add Appointment" 
                         Command="{Binding AddAppointmentCommand}" 
                         Margin="5" Width="100" />
-                <Button Grid.Row="3" Grid.Column="3" Content="Delete" 
+                <Button Grid.Row="3" Grid.Column="3" Content="Delete Appointment" 
                         Command="{Binding DeleteAppointmentCommand}" 
+                        Margin="5" Width="100" />
+                <Button Grid.Row="2" Grid.Column="3" Content="Add new user" 
+                        Command="{Binding AddNewUserCommand}" 
+                        Margin="5" Width="100" />
+                <TextBox x:Name="UserNameTextBox" Grid.Column="3" Text="{Binding NewUserName, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" Margin="0,6,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+                <Button Grid.Row="0" Grid.Column="4" Content="Delete user" 
+                        Command="{Binding DeleteUserCommand}" 
                         Margin="5" Width="100" />
             </Grid>
         </GroupBox>
 
-        <!-- Appointment List -->
         <DataGrid Grid.Row="1" ItemsSource="{Binding Appointments}" 
                   SelectedItem="{Binding SelectedAppointment}" 
                   AutoGenerateColumns="False" 

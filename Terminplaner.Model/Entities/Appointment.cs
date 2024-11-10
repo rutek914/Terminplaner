@@ -1,13 +1,6 @@
-﻿ using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.RightsManagement;
-using System.Text;
-using System.Threading.Tasks;
-using Terminplaner.Model.Enums;
+﻿using Terminplaner.Model.Enums;
 
-namespace Terminplaner.Model.Entities
-{
+namespace Terminplaner.Model.Entities {
     /// <summary>
     /// 
     /// </summary>

@@ -1,16 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terminplaner.Model.Enums;
 
-namespace Terminplaner.Model.Entities
-{
+namespace Terminplaner.Model.Entities {
     /// <summary>
     /// represents the database context for the terminplaner app
-    /// manages the database connection and providfes DbSets for entity access
+    /// manages the database connection and provides DbSets for entity access
     /// </summary>
     public class TerminplanerDbContext : DbContext
     {
@@ -28,7 +22,7 @@ namespace Terminplaner.Model.Entities
         public DbSet<User> Users { get; set; }
 
         /// <summary>
-        /// configures entity properties and relatoinships using modelBuilder
+        /// configures entity properties and relationships using modelBuilder
         /// </summary>
         /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
