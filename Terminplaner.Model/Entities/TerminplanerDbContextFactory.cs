@@ -2,8 +2,7 @@
 using Microsoft.EntityFrameworkCore.Design;
 using System.Configuration;
 
-namespace Terminplaner.Model.Entities
-{
+namespace Terminplaner.Model.Entities {
     /// <summary>
     /// factory class to create an instance of TerminplanerContext during desing time
     /// used by entity framework for generatiuong migrations and uipdating the database
@@ -14,7 +13,6 @@ namespace Terminplaner.Model.Entities
         {
             var optionsBuilder = new DbContextOptionsBuilder<TerminplanerDbContext>();
 
-            // Pobieranie connection string z App.config
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             optionsBuilder.UseSqlServer(connectionString);
 

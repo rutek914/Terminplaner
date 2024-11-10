@@ -1,13 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terminplaner.Model.Entities;
 
-namespace Terminplaner.Service
-{
+namespace Terminplaner.Service {
     public class AppointmentService
     {
         private readonly TerminplanerDbContext _context;

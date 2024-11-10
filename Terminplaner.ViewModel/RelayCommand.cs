@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
-namespace Terminplaner.ViewModel
-{
+namespace Terminplaner.ViewModel {
     public class RelayCommand : ICommand
     {
         private readonly Func<object?, Task> _executeAsync;
